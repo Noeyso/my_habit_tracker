@@ -1,0 +1,38 @@
+@value makerSkyBlue,makerBlack from "../../common/color.css";
+
+.container {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: makerSkyBlue;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.title {
+  margin-right: 0.5rem;
+}
+.img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.today {
+  display: flex;
+  align-items: center;
+}
+.gage {
+  padding: 0;
+  margin-left: 1rem;
+  display: flex;
+}
+.block {
+  width: 2rem;
+  height: 1rem;
+  border: 1px solid makerBlack;
+}
+.color {
+  background-color: yellow;
+}

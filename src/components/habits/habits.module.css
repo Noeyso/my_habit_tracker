@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.habits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.button {
+  margin-top: 2rem;
+}
+.plus {
+  width: 4rem;
+  transition: all 0.2s ease-in-out;
+}
+.plus:hover {
+  transform: scale(1.1);
+}
