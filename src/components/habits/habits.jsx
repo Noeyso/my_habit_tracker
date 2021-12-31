@@ -9,6 +9,15 @@ const Habits = ({ habits, handleAdd, handleDelete, handleComplete }) => {
     setIsShow(!isShow);
   };
 
+  const isDuplicated = (color) => {
+    for (let i = 0; i < habits.length; i++) {
+      if (habits[i].color === color) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   return (
     <div className={styles.container}>
       <ul className={styles.habits}>
@@ -24,7 +33,13 @@ const Habits = ({ habits, handleAdd, handleDelete, handleComplete }) => {
       <button className={styles.button} onClick={onModal}>
         <img className={styles.plus} src={Plus} alt="plus" />
       </button>
-      {isShow && <HabitAddForm closeModal={onModal} handleAdd={handleAdd} />}
+      {isShow && (
+        <HabitAddForm
+          closeModal={onModal}
+          handleAdd={handleAdd}
+          isDuplicated={isDuplicated}
+        />
+      )}
     </div>
   );
 };

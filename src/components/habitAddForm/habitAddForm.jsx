@@ -3,7 +3,7 @@ import styles from "./habitAddForm.module.css";
 import Close from "../../common/image/close.png";
 import Add from "../../common/image/add.png";
 import ColorPicker from "../colorPicker/colorPicker";
-const HabitAddForm = ({ closeModal, handleAdd }) => {
+const HabitAddForm = ({ closeModal, handleAdd, isDuplicated }) => {
   const inputRef = useRef();
   const [name, setName] = useState("");
   const [color, setColor] = useState("");
@@ -28,6 +28,18 @@ const HabitAddForm = ({ closeModal, handleAdd }) => {
   };
 
   const addHabit = () => {
+    if (name === "") {
+      alert("습관이름을 등록해주세요!");
+      return;
+    }
+    if (color === "") {
+      alert("색상을 등록해주세요!");
+      return;
+    }
+    if (!isDuplicated(color)) {
+      alert("색상이 중복되었습니다!");
+      return;
+    }
     closeModal();
     handleAdd(name, color);
   };

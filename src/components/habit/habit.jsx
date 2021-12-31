@@ -5,9 +5,9 @@ import Delete from "../../common/image/trash.png";
 import Checked from "../../common/image/checked.png";
 const Habit = ({ habit, handleDelete, handleComplete }) => {
   const { name, color } = habit;
-  const [isDone, setIsDone] = useState(false);
+  const [isDone, setIsDone] = useState(habit.done);
   const onComplete = () => {
-    handleComplete();
+    handleComplete(habit.id);
     setIsDone(!isDone);
   };
   const onDelete = () => {

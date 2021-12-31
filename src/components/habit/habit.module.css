@@ -37,3 +37,9 @@
 .trash {
   width: 1.1rem;
 }
+
+@media (min-width: 20rem) and (max-width: 48rem) {
+  .container {
+    width: 40%;
+  }
+}

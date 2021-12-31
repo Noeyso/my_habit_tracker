@@ -4,16 +4,14 @@ import styles from "./colorPicker.module.css";
 import Dots from "../../common/image/dots.png";
 
 const ColorPicker = ({ selectColor }) => {
-  const [color, setColor] = useState("#FB5266");
+  const [color, setColor] = useState("#FFFFFF");
   const [isOpen, setIsOpen] = useState(false);
 
-  const openPicker = () => {
+  const openPicker = (color) => {
     setIsOpen(!isOpen);
-    selectColor(color);
+    selectColor(color.hex);
   };
-  const onChange = (color) => {
-    setColor(color.hex);
-  };
+
   return (
     <div className={styles.container}>
       <h5 className={styles.title}>Habit Color</h5>
@@ -45,8 +43,8 @@ const ColorPicker = ({ selectColor }) => {
       {isOpen && (
         <TwitterPicker
           color={color}
-          onChangeComplete={onChange}
           onChangeComplete={openPicker}
+          triangle="hide"
         />
       )}
     </div>
