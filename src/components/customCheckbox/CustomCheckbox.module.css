@@ -1,0 +1,15 @@
+@value makerLightGrey from "../../common/color.css";
+.container {
+  position: relative;
+  cursor: pointer;
+}
+.container input {
+  -webkit-appearance: none;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  outline: none !important;
+  border-radius: 0.2rem;
+  background: makerLightGrey;
+}

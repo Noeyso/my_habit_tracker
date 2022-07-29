@@ -1,0 +1,34 @@
+@value mainColor,pointColor,makerLightGrey from "../../common/color.css";
+.container {
+  font-size: 1.6rem;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Gimpo-Bold";
+  font-size: 3rem;
+  padding: 1rem;
+}
+.top button {
+  color: pointColor;
+  border: 0.1rem solid mainColor;
+  border-radius: 3rem;
+  padding: 1.5rem 2rem;
+  font-family: "Gimpo-Bold";
+  font-size: 2rem;
+  transition: ease-in 0.1s;
+}
+.top button:hover {
+  border-color: pointColor;
+}
+.gauge_container {
+  height: 3rem;
+  background: makerLightGrey;
+  border-radius: 1rem;
+}
+
+.progress_bar span {
+  margin-top: 1rem;
+  float: right;
+}

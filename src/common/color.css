@@ -1,8 +1,9 @@
 @value makerBlack: black;
 @value makerWhite: white;
 @value makerSkyBlue: #dbe8ee;
-@value makerLightGrey: #e8e7e6;
 @value makerLightPink: #ffeae8;
+@value makerLightGrey: #EDEDED;
+@value makerMediumLightGrey: #C9C9C9;
 @value makerGrey: #626262;
 @value makerLightGreen: #8be713;
 @value makerLime: #d1f6a3;
@@ -15,3 +16,8 @@
 @value makerYellow: #FED668;
 @value makerPurple: #C2AAC5;
 @value boxShadow: 4px 6px 7px -5px rgba(135, 135, 135, 0.57);
+
+@value mainColor: #8fd3f4;
+@value subColor: #84fab0;
+@value pointColor: #49AAF4;
+@value makerGradient: linear-gradient(120deg, #8fd3f4 0%, #84fab0 100%);

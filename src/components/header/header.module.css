@@ -1,44 +1,19 @@
-@value makerSkyBlue,makerBlack from "../../common/color.css";
+@value makerGradient,makerBlack from "../../common/color.css";
 
 .container {
   display: flex;
-  padding: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  background-color: makerSkyBlue;
+  justify-content: center;
+  background: makerGradient;
+  padding: 1rem 0;
 }
-.logo {
+.contents {
+  width: 80%;
   display: flex;
   align-items: center;
 }
 .title {
-  margin-right: 0.5rem;
-}
-.img {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.today {
-  display: flex;
-  align-items: center;
-}
-.gage {
-  padding: 0;
-  margin-left: 1rem;
-  display: flex;
-}
-.block {
-  width: 2rem;
-  height: 1rem;
-  border: 1px solid makerBlack;
-}
-.color {
-  background-color: yellow;
-}
-
-@media (min-width: 20rem) and (max-width: 48rem) {
-  .container {
-    flex-direction: column;
-  }
+  font-family: "Gimpo-Bold";
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
 }

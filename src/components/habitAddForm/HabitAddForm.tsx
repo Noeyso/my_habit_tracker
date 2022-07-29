@@ -2,13 +2,13 @@ import React, { useRef, useState } from "react";
 import styles from "./habitAddForm.module.css";
 import Close from "../../common/image/close.png";
 import Add from "../../common/image/add.png";
-import ColorPicker from "../colorPicker/colorPicker";
-const HabitAddForm = ({ closeModal, handleAdd, isDuplicated }) => {
+//import ColorPicker from "../colorPicker/colorPicker";
+const HabitAddForm = () => {
   const inputRef = useRef();
   const [name, setName] = useState("");
   const [color, setColor] = useState("");
   const [style, setStyle] = useState({});
-
+  /*
   const showName = () => {
     setName(inputRef.current.value);
     console.log(name);
@@ -43,13 +43,13 @@ const HabitAddForm = ({ closeModal, handleAdd, isDuplicated }) => {
     closeModal();
     handleAdd(name, color);
   };
-
+*/
   return (
     <div className={styles.container}>
       <section className={styles.modal}>
         <header className={styles.header}>
           <h2 className={styles.title}>Add Habit</h2>
-          <button onClick={closeModal}>
+          <button>
             <img className={styles.close} src={Close} alt="close" />
           </button>
         </header>
@@ -58,16 +58,13 @@ const HabitAddForm = ({ closeModal, handleAdd, isDuplicated }) => {
           <form className={styles.addForm}>
             <input
               className={styles.addInput}
-              ref={inputRef}
               type="text"
               placeholder="Enter Habit"
-              onKeyPress={onKeyPress}
             />
-            <button onClick={onClick}>
+            <button>
               <img className={styles.plus} src={Add} alt="add" />
             </button>
           </form>
-          <ColorPicker selectColor={selectColor} />
         </section>
         <section className={styles.result}>
           <div className={styles.box}>
@@ -76,9 +73,7 @@ const HabitAddForm = ({ closeModal, handleAdd, isDuplicated }) => {
           <div className={styles.box} style={style}></div>
         </section>
 
-        <button className={styles.addBtn} onClick={addHabit}>
-          Add
-        </button>
+        <button className={styles.addBtn}>Add</button>
       </section>
     </div>
   );

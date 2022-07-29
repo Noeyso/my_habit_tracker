@@ -1,0 +1,21 @@
+.container {
+}
+.row {
+}
+.cell {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.habit {
+  display: flex;
+  align-items: center;
+}
+.habit span {
+  margin-left: 1rem;
+}
+.colorbar {
+  width: 1rem;
+  height: 4rem;
+  border-radius: 1.5rem;
+}

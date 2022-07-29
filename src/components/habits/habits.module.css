@@ -1,10 +1,41 @@
+@value makerMediumLightGrey from "../../common/color.css";
+
 .container {
   display: flex;
   flex-direction: column;
+  margin-top: 5rem;
+  font-size: 1.6rem;
+}
+.divider {
+  height: 0.1rem;
+  background: makerMediumLightGrey;
+}
+.cell {
+  text-align: center;
+}
+.habit {
+  display: flex;
+  align-items: center;
+}
+.habit span {
+  margin-left: 1rem;
+}
+.colorbar {
+  width: 1rem;
+  height: 4rem;
+  border-radius: 1.5rem;
+}
+.week_header {
+  display: flex;
+  justify-content: flex-end;
+}
+.week_header span {
+  margin: 1.5rem 3rem;
 }
 
 .habits {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .button {
