@@ -1,79 +1,87 @@
-import React, { useRef, useState } from "react";
-import styles from "./habitAddForm.module.css";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import styles from "./HabitAddForm.module.css";
 import Close from "../../common/image/close.png";
-import Add from "../../common/image/add.png";
-//import ColorPicker from "../colorPicker/colorPicker";
-const HabitAddForm = () => {
-  const inputRef = useRef();
-  const [name, setName] = useState("");
-  const [color, setColor] = useState("");
-  const [style, setStyle] = useState({});
-  /*
-  const showName = () => {
-    setName(inputRef.current.value);
-    console.log(name);
-  };
-  const onClick = (event) => {
-    event.preventDefault();
-    showName();
-  };
-  const onKeyPress = (event) => {
-    if (event.key === "Enter") {
-      showName();
-    }
-  };
-  const selectColor = (bg) => {
-    setColor(bg);
-    setStyle({ backgroundColor: bg });
+import { useDispatch } from "react-redux";
+import { DATA_TYPE } from "../../common/data/tableContents";
+import { addHabit } from "../../modules/habit/actions";
+
+const HabitAddForm: React.FC<{ closeForm: () => void }> = (props) => {
+  const [color, setColor] = useState("#dedede");
+  const [isShowMessage, setIsShowMessage] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const dispatch = useDispatch();
+  const updateHabit = useCallback(
+    (habit: DATA_TYPE) => dispatch(addHabit({ habit: habit })),
+    [dispatch]
+  );
+
+  useEffect(() => {
+    const initColor = makeRandomColor();
+    setColor(initColor);
+  }, []);
+  const makeRandomColor = () => {
+    return "#" + Math.round(Math.random() * 0xffffff).toString(16);
   };
 
-  const addHabit = () => {
-    if (name === "") {
-      alert("습관이름을 등록해주세요!");
-      return;
-    }
-    if (color === "") {
-      alert("색상을 등록해주세요!");
-      return;
-    }
-    if (!isDuplicated(color)) {
-      alert("색상이 중복되었습니다!");
-      return;
-    }
-    closeModal();
-    handleAdd(name, color);
+  const resetColor = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const newColor = makeRandomColor();
+    setColor(newColor);
   };
-*/
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const habitName = inputRef.current!.value;
+    if (habitName === "") {
+      setIsShowMessage(true);
+      return;
+    }
+    updateHabit({
+      color: color,
+      name: habitName,
+      weeks: [false, false, false, false, false, false, false],
+    });
+    props.closeForm();
+  };
   return (
     <div className={styles.container}>
-      <section className={styles.modal}>
+      <section className={styles.form}>
         <header className={styles.header}>
-          <h2 className={styles.title}>Add Habit</h2>
+          <h2 className={styles.title}>습관 추가</h2>
           <button>
-            <img className={styles.close} src={Close} alt="close" />
+            <img
+              className={styles.close}
+              src={Close}
+              alt="close"
+              onClick={props.closeForm}
+            />
           </button>
         </header>
-        <section className={styles.body}>
-          <h5 className={styles.habitName}>Habit Name</h5>
-          <form className={styles.addForm}>
-            <input
-              className={styles.addInput}
-              type="text"
-              placeholder="Enter Habit"
-            />
-            <button>
-              <img className={styles.plus} src={Add} alt="add" />
-            </button>
-          </form>
-        </section>
-        <section className={styles.result}>
-          <div className={styles.box}>
-            <h2>{name}</h2>
-          </div>
-          <div className={styles.box} style={style}></div>
-        </section>
 
-        <button className={styles.addBtn}>Add</button>
+        <form className={styles.add_form} onSubmit={onSubmit}>
+          <section className={styles.habit_name}>
+            <h5>습관 이름</h5>
+
+            <input type="text" placeholder="Enter Habit" ref={inputRef} />
+          </section>
+
+          <section className={styles.set_color}>
+            <h5>색상 설정</h5>
+            <div className={styles.controls}>
+              <div
+                className={styles.color_container}
+                style={{ background: color }}
+              >
+                {color}
+              </div>
+              <button onClick={resetColor}>재설정</button>
+            </div>
+          </section>
+
+          <button type="submit" className={styles.addBtn}>
+            Add
+          </button>
+          {isShowMessage && <span>습관 이름을 설정해주세요!</span>}
+        </form>
       </section>
     </div>
   );

@@ -35,20 +35,20 @@ export const columns: COLUMN_TYPE[] = [
 ];
 
 export type DATA_TYPE = {
-  id: string;
-  habit: string;
-  weeks: number[];
+  color: string;
+  name: string;
+  weeks: [boolean, boolean, boolean, boolean, boolean, boolean, boolean];
 };
 
 export const mock_data: DATA_TYPE[] = [
   {
-    id: "#8fd3f4",
-    habit: "윗몸일으키기 30개",
-    weeks: [1, 4],
+    color: "#8fd3f4",
+    name: "윗몸일으키기 30개",
+    weeks: [false, false, false, true, true, false, false],
   },
   {
-    id: "#8ae2c4",
-    habit: "책읽기",
-    weeks: [2],
+    color: "#8ae2c4",
+    name: "책읽기",
+    weeks: [true, false, false, false, true, false, false],
   },
 ];

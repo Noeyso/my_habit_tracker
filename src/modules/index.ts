@@ -1,7 +1,12 @@
 import { combineReducers } from "redux";
+import habit from "./habit/reducer";
+import { Habit } from "./habit/types";
 
-const rootReducer = combineReducers({});
+export type RootState = {
+  habit: Habit;
+};
+const rootReducer = combineReducers({
+  habit,
+});
 
 export default rootReducer;
-
-export type RootState = ReturnType<typeof rootReducer>;
