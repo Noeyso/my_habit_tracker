@@ -1,4 +1,4 @@
-@value mainColor,pointColor,makerLightGrey from "../../common/color.css";
+@value mainColor,pointColor,makerLightGrey,makerGradient from "../../common/color.css";
 .container {
   font-size: 1.6rem;
 }
@@ -15,7 +15,6 @@
   border: 0.1rem solid mainColor;
   border-radius: 3rem;
   padding: 1.5rem 2rem;
-  font-family: "Gimpo-Bold";
   font-size: 2rem;
   transition: ease-in 0.1s;
 }
@@ -29,8 +28,9 @@
 }
 .gauge {
   height: 100%;
-  background: mainColor;
+  background: makerGradient;
   transition: all 1s;
+  border-radius: 1rem;
 }
 
 .progress_bar span {

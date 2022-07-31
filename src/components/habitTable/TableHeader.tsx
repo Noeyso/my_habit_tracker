@@ -1,4 +1,3 @@
-import React from "react";
 import { columns } from "../../common/data/tableContents";
 import styles from "./TableHeader.module.css";
 const TableHeader = () => {

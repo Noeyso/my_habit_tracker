@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import styles from "./TableBody.module.css";
 import {
   columns,
@@ -14,7 +13,7 @@ const TableBody = () => {
     (state: RootState) => state.habit.habit
   );
 
-  const renderCell = (data: DATA_TYPE, column: COLUMN_TYPE, idx: number) => {
+  const renderCell = (data: DATA_TYPE, idx: number) => {
     if (idx === 0) {
       return (
         <div className={styles.habit}>
@@ -41,7 +40,7 @@ const TableBody = () => {
         <tr key={data.color} className={styles.row}>
           {columns.map((column, idx) => (
             <td key={data.color + column.key} className={styles.cell}>
-              {renderCell(data, column, idx)}
+              {renderCell(data, idx)}
             </td>
           ))}
         </tr>

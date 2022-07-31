@@ -8,7 +8,9 @@ export const DELETE_HABIT = "habit/DELETE_HABIT";
 export const UPDATE_HABIT = "habit/UPDATE_HABIT";
 
 export const addHabit = createStandardAction(ADD_HABIT)<{ habit: DATA_TYPE }>();
-export const deleteHabit = createStandardAction(DELETE_HABIT)();
+export const deleteHabit = createStandardAction(DELETE_HABIT)<{
+  color: string;
+}>();
 export const updateHabit = createStandardAction(UPDATE_HABIT)<{
   color: string;
   week: number;

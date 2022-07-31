@@ -15,7 +15,10 @@ const habit = createReducer<Habit, HabitAction>(initialState, {
     }),
   [DELETE_HABIT]: (state, action) =>
     produce(state, (draft) => {
-      draft.habit.pop();
+      const index = draft.habit.findIndex(
+        (habit) => habit.color === action.payload.color
+      );
+      draft.habit.splice(index, 1);
     }),
   [UPDATE_HABIT]: (state, action) =>
     produce(state, (draft) => {

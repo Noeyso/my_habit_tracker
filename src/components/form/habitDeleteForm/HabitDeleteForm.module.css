@@ -1,0 +1,29 @@
+@value mainColor,makerRed from "../../../common/color.css";
+
+.btns {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.btns button {
+  padding: 1rem;
+  margin: 0 0.3rem;
+  border-radius: 0.3rem;
+  font-family: Gimpo-Regular;
+  opacity: 1;
+}
+.btn_delete {
+  background: mainColor;
+}
+.btn_delete:hover {
+  color: makerRed;
+}
+.btn_cancel {
+  background: makerRed;
+  color: white;
+}
+.btn_cancel:hover {
+  color: mainColor;
+}

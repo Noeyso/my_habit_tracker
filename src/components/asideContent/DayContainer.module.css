@@ -1,4 +1,4 @@
-@value makerMediumLightGrey,mainColor,pointColor from "../../common/color.css";
+@value makerMediumLightGrey from "../../common/color.css";
 
 .container {
   display: flex;
@@ -9,6 +9,7 @@
 }
 .today {
   margin-bottom: 1rem;
+  font-family: Gimpo-Bold;
 }
 .box {
   width: 100%;

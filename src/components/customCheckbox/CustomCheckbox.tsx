@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { updateHabit } from "../../modules/habit/actions";
 import styles from "./CustomCheckbox.module.css";

@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
 import styles from "./Header.module.css";
 
-const Header: React.FC<{}> = (props) => {
-  console.log(Date.now);
+const Header = () => {
   return (
     <header className={styles.container}>
       <div className={styles.contents}>

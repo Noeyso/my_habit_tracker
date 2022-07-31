@@ -1,4 +1,4 @@
-@value makerGradient,makerBlack from "../../common/color.css";
+@value makerGradient from "../../common/color.css";
 
 .container {
   display: flex;

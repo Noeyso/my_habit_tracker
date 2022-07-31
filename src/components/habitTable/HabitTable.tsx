@@ -1,8 +1,7 @@
-import React from "react";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
-const Table = () => {
+const HabitTable = () => {
   return (
     <table>
       <TableHeader />
@@ -11,4 +10,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default HabitTable;

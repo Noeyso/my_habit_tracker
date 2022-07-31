@@ -1,7 +1,6 @@
 import { DATA_TYPE } from "../../common/data/tableContents";
 import styles from "./DayContainer.module.css";
 import moment from "moment";
-
 import { useSelector } from "react-redux";
 import { RootState } from "../../modules";
 import DayItem from "./DayItem";
