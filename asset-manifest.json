@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/my_habit_tracker/static/css/main.f5ce51e1.css",
-    "main.js": "/my_habit_tracker/static/js/main.5cea1ecb.js",
+    "main.js": "/my_habit_tracker/static/js/main.b445505e.js",
     "static/media/GimpoGothicBold.otf": "/my_habit_tracker/static/media/GimpoGothicBold.1fbd47a89385323eb050.otf",
     "static/media/GimpoGothicRegular.otf": "/my_habit_tracker/static/media/GimpoGothicRegular.d0cd48012c9ac0d8faaa.otf",
     "index.html": "/my_habit_tracker/index.html",
     "main.f5ce51e1.css.map": "/my_habit_tracker/static/css/main.f5ce51e1.css.map",
-    "main.5cea1ecb.js.map": "/my_habit_tracker/static/js/main.5cea1ecb.js.map"
+    "main.b445505e.js.map": "/my_habit_tracker/static/js/main.b445505e.js.map"
   },
   "entrypoints": [
     "static/css/main.f5ce51e1.css",
-    "static/js/main.5cea1ecb.js"
+    "static/js/main.b445505e.js"
   ]
 }
