@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# My-Habit-Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+습관을 기록하고 체크할 수 있는 습관 관리 사이트입니다.
 
-## Available Scripts
+## 사이트 주소
 
-In the project directory, you can run:
+https://noeyso.github.io/my_habit_tracker/
 
-### `yarn start`
+## 서론
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> 처음에는 우리가 습관을 만들지만 <br /> 그 다음에는 습관이 우리를 만든다. <br /> \_존 드라이든
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+habit tracker는 하루의 작은 습관들을 기록하고 체크해 나갈 수 있는 사이트입니다.
 
-### `yarn test`
+기존에 작성했던 habit tracker의 디자인과 기능을 수정했고, redux를 사용해서 습관을 관리할 수 있도록 변경했습니다.
+![프로젝트 수정 비교](https://user-images.githubusercontent.com/48446896/182156090-f3c1290d-580c-4d03-b9d6-da47d8c3e924.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 프로젝트 구조
 
-### `yarn build`
+.
+├── common
+│   └── font
+├── components
+│   ├── asideContent
+│   ├── customCheckbox
+│   ├── form
+│   │   ├── habitAddForm
+│   │   └── habitDeleteForm
+│   ├── habitStatus
+│   ├── habitTable
+│   ├── habits
+│   └── header
+└── modules
+└── habit
+├── actions.ts
+    ├── reducer.ts
+└── types.ts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- common : 폰트, 색상(color.css) 등 공통으로 사용되는 resource
+- components : 페이지를 구성하는 컴포넌트들
+- modules : 데이터,데이터를 관리하는 파일들 (redux 관련 내용을 담고있습니다.)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+프로젝트 UI를 다음과 같이 컴포넌트로 구조화할 수 있습니다.
+![프로젝트 구조](https://user-images.githubusercontent.com/48446896/182159188-617cc477-ceee-4dc1-beb8-7580117ae81e.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 프로젝트 설명
 
-### `yarn eject`
+<img width="1279" alt="메인화면" src="https://user-images.githubusercontent.com/48446896/182160683-3ce5750f-90e2-47ff-a94a-b55a25416457.png">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+(메인 화면)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. 일주일 동안의 습관기록을 볼 수 있는 테이블이 있습니다.
+2. 테이블의 체크박스를 사용해서 습관 상태를 변경할 수 있습니다.
+3. progress bar를 통해 일주일 동안의 습관 달성률을 확인할 수 있습니다.
+4. 오른쪽 사이드의 콘텐츠를 통해 오늘의 습관 상태를 확인할 수 있습니다. (습관 완료 시 습관 아이템이 색으로 채워집니다.)
+5. 습관추가 버튼을 통해 습관을 추가할 수 있습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img width="1279" alt="습관추가" src="https://user-images.githubusercontent.com/48446896/182161092-c289266b-613a-4570-a8d9-fb1d17be90f0.png">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+(습관 추가 폼)
 
-## Learn More
+6. 습관의 이름과 색상을 설정할 수 있습니다. 색상은 랜덤으로 설정되며, 재설정 버튼을 통해 랜덤으로 색상을 변경할 수 있습니다.
+   (습관 이름을 설정하지 않으면 습관을 추가할 수 없습니다.)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img width="1279" alt="습관삭제" src="https://user-images.githubusercontent.com/48446896/182161634-24454604-4220-4c4d-9d21-3608677b2c55.png">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+(습관 삭제 폼)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+7. 오른쪽 사이드의 습관 목록에서 휴지통 버튼을 눌러서 습관을 삭제할 수 있습니다.

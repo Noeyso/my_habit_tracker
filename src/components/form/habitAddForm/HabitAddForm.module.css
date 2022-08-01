@@ -60,14 +60,14 @@
   margin-right: 2.5rem;
 }
 
-.addBtn {
+.add_btn {
   width: 40%;
   padding: 1rem;
   border-radius: 1rem;
   border: 0.3rem solid mainColor;
   margin: 2rem 0;
 }
-.addBtn:hover {
+.add_btn:hover {
   color: makerWhite;
   background: mainColor;
 }

@@ -1,19 +1,16 @@
 import styles from "./TableBody.module.css";
-import {
-  columns,
-  COLUMN_TYPE,
-  DATA_TYPE,
-} from "../../common/data/tableContents";
 import CustomCheckbox from "../customCheckbox/CustomCheckbox";
 import { useSelector } from "react-redux";
 import { RootState } from "../../modules";
+import { columns } from "./column";
+import { HABIT_TYPE } from "../../modules/habit/types";
 
 const TableBody = () => {
-  const habits: DATA_TYPE[] = useSelector(
+  const habits: HABIT_TYPE[] = useSelector(
     (state: RootState) => state.habit.habit
   );
 
-  const renderCell = (data: DATA_TYPE, idx: number) => {
+  const renderCell = (data: HABIT_TYPE, idx: number) => {
     if (idx === 0) {
       return (
         <div className={styles.habit}>

@@ -2,17 +2,17 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./HabitAddForm.module.css";
 import { useDispatch } from "react-redux";
 import Form from "../Form";
-import { DATA_TYPE } from "../../../common/data/tableContents";
 import { addHabit } from "../../../modules/habit/actions";
+import { HABIT_TYPE } from "../../../modules/habit/types";
 
-const HabitAddForm = () => {
+const HabitAddForm: React.FC<{ closeForm: () => void }> = (props) => {
   const [color, setColor] = useState("");
   const [hexColor, setHexColor] = useState("");
   const [isShowMessage, setIsShowMessage] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
   const updateHabit = useCallback(
-    (habit: DATA_TYPE) => dispatch(addHabit({ habit: habit })),
+    (habit: HABIT_TYPE) => dispatch(addHabit({ habit: habit })),
     [dispatch]
   );
 
@@ -50,6 +50,7 @@ const HabitAddForm = () => {
       name: habitName,
       weeks: [false, false, false, false, false, false, false],
     });
+    props.closeForm();
   };
   return (
     <Form title="습관 추가">
@@ -70,9 +71,8 @@ const HabitAddForm = () => {
             <button onClick={resetColor}>재설정</button>
           </div>
         </section>
-
-        <button type="submit" className={styles.addBtn}>
-          Add
+        <button type="submit" className={styles.add_btn}>
+          추가하기
         </button>
         {isShowMessage && <span>습관 이름을 설정해주세요!</span>}
       </form>

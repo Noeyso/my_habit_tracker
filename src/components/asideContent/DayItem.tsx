@@ -3,12 +3,12 @@ import React, { useCallback, useState } from "react";
 import { BiCheck } from "react-icons/bi";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { DATA_TYPE } from "../../common/data/tableContents";
 import { deleteHabit, updateHabit } from "../../modules/habit/actions";
+import { HABIT_TYPE } from "../../modules/habit/types";
 import HabitDeleteForm from "../form/habitDeleteForm/HabitDeleteForm";
 import styles from "./DayItem.module.css";
 
-const DayItem: React.FC<{ habit: DATA_TYPE }> = (props) => {
+const DayItem: React.FC<{ habit: HABIT_TYPE }> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const today = moment();
   const week = today.day();

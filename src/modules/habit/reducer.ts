@@ -1,11 +1,10 @@
-import { mock_data } from "./../../common/data/tableContents";
-import { HabitAction, Habit } from "./types";
+import { HabitAction, Habit, init_data } from "./types";
 import { createReducer } from "typesafe-actions";
 import { ADD_HABIT, DELETE_HABIT, UPDATE_HABIT } from "./actions";
 import produce from "immer";
 
 const initialState: Habit = {
-  habit: mock_data,
+  habit: init_data,
 };
 
 const habit = createReducer<Habit, HabitAction>(initialState, {

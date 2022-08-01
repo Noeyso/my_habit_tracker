@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { DATA_TYPE } from "../../common/data/tableContents";
 import { RootState } from "../../modules";
+import { HABIT_TYPE } from "../../modules/habit/types";
 import HabitAddForm from "../form/habitAddForm/HabitAddForm";
 import styles from "./HabitStatus.module.css";
 const HabitStatus = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
-  const habits: DATA_TYPE[] = useSelector(
+  const habits: HABIT_TYPE[] = useSelector(
     (state: RootState) => state.habit.habit
   );
   const [gauge, setGauge] = useState(0);
@@ -40,7 +40,7 @@ const HabitStatus = () => {
         </div>
         <span>{gauge}% 달성!</span>
       </section>
-      {isOpenForm && <HabitAddForm />}
+      {isOpenForm && <HabitAddForm closeForm={controlForm} />}
     </section>
   );
 };

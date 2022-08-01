@@ -1,4 +1,4 @@
-import { columns } from "../../common/data/tableContents";
+import { columns } from "./column";
 import styles from "./TableHeader.module.css";
 const TableHeader = () => {
   return (

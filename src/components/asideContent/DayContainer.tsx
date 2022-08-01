@@ -1,11 +1,11 @@
-import { DATA_TYPE } from "../../common/data/tableContents";
 import styles from "./DayContainer.module.css";
 import moment from "moment";
 import { useSelector } from "react-redux";
 import { RootState } from "../../modules";
 import DayItem from "./DayItem";
+import { HABIT_TYPE } from "../../modules/habit/types";
 const DayContainer = () => {
-  const habits: DATA_TYPE[] = useSelector(
+  const habits: HABIT_TYPE[] = useSelector(
     (state: RootState) => state.habit.habit
   );
 
