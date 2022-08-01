@@ -18,8 +18,8 @@ habit tracker는 하루의 작은 습관들을 기록하고 체크해 나갈 수
 ## 프로젝트 구조
 
 .
-├── common
-│   └── font
+├── common 
+│   └── font  
 ├── components
 │   ├── asideContent
 │   ├── customCheckbox
