@@ -17,6 +17,7 @@ habit tracker는 하루의 작은 습관들을 기록하고 체크해 나갈 수
 
 ## 프로젝트 구조
 
+```bash
 .
 ├── common 
 │   └── font  
@@ -31,39 +32,43 @@ habit tracker는 하루의 작은 습관들을 기록하고 체크해 나갈 수
 │   ├── habits
 │   └── header
 └── modules
-└── habit
-├── actions.ts
-    ├── reducer.ts
-└── types.ts
+    └── habit
+        ├── actions.ts
+        ├── reducer.ts
+        └── types.ts
+```
 
 - common : 폰트, 색상(color.css) 등 공통으로 사용되는 resource
 - components : 페이지를 구성하는 컴포넌트들
 - modules : 데이터,데이터를 관리하는 파일들 (redux 관련 내용을 담고있습니다.)
+<br />
+<br />
 
 프로젝트 UI를 다음과 같이 컴포넌트로 구조화할 수 있습니다.
-![프로젝트 구조](https://user-images.githubusercontent.com/48446896/182159188-617cc477-ceee-4dc1-beb8-7580117ae81e.png)
+<img width="700" alt="메인화면" src="https://user-images.githubusercontent.com/48446896/182159188-617cc477-ceee-4dc1-beb8-7580117ae81e.png">
+
+<br />
 
 ## 프로젝트 설명
 
-<img width="1279" alt="메인화면" src="https://user-images.githubusercontent.com/48446896/182160683-3ce5750f-90e2-47ff-a94a-b55a25416457.png">
-
+<img width="700" alt="메인화면" src="https://user-images.githubusercontent.com/48446896/182160683-3ce5750f-90e2-47ff-a94a-b55a25416457.png">
+<br />
 (메인 화면)
 
-1. 일주일 동안의 습관기록을 볼 수 있는 테이블이 있습니다.
-2. 테이블의 체크박스를 사용해서 습관 상태를 변경할 수 있습니다.
-3. progress bar를 통해 일주일 동안의 습관 달성률을 확인할 수 있습니다.
-4. 오른쪽 사이드의 콘텐츠를 통해 오늘의 습관 상태를 확인할 수 있습니다. (습관 완료 시 습관 아이템이 색으로 채워집니다.)
-5. 습관추가 버튼을 통해 습관을 추가할 수 있습니다.
+1. 테이블의 체크박스 또는 오른쪽의 "달성 완료!" 버튼을 사용해서 습관 상태를 변경할 수 있습니다.
+2. progress bar를 통해 일주일 동안의 습관 달성률을 확인할 수 있습니다.
+3. 오른쪽 사이드의 콘텐츠를 통해 오늘의 습관 상태를 확인할 수 있습니다. (습관 완료 시 습관 아이템이 색으로 채워집니다.)
+4. 습관추가 버튼을 통해 습관을 추가할 수 있습니다.
 
-<img width="1279" alt="습관추가" src="https://user-images.githubusercontent.com/48446896/182161092-c289266b-613a-4570-a8d9-fb1d17be90f0.png">
-
+<img width="700" alt="습관추가" src="https://user-images.githubusercontent.com/48446896/182161092-c289266b-613a-4570-a8d9-fb1d17be90f0.png">
+<br />
 (습관 추가 폼)
 
 6. 습관의 이름과 색상을 설정할 수 있습니다. 색상은 랜덤으로 설정되며, 재설정 버튼을 통해 랜덤으로 색상을 변경할 수 있습니다.
    (습관 이름을 설정하지 않으면 습관을 추가할 수 없습니다.)
 
-<img width="1279" alt="습관삭제" src="https://user-images.githubusercontent.com/48446896/182161634-24454604-4220-4c4d-9d21-3608677b2c55.png">
-
+<img width="700" alt="습관삭제" src="https://user-images.githubusercontent.com/48446896/182161634-24454604-4220-4c4d-9d21-3608677b2c55.png">
+<br />
 (습관 삭제 폼)
 
 7. 오른쪽 사이드의 습관 목록에서 휴지통 버튼을 눌러서 습관을 삭제할 수 있습니다.
